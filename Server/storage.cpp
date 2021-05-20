@@ -1,3 +1,8 @@
+#include "storage.h"
+
+
+extern HANDLE Sys_Record_Sema;	//시스템 기록관련 세마포어 핸들
+
 //시스템 정보 기록
 void system_record(int n, ...)
 {
@@ -30,8 +35,8 @@ void system_record(int n, ...)
 	sys_localtime = time(NULL);
 	systime = localtime(&sys_localtime);
 
-	year = systime->tm_year+1900;	//1900년 기준
-	month = systime->tm_mon+1;		//0~11 +1 => 1 ~ 12
+	year = systime->tm_year+1900;	//1900년 기준이므로 더함
+	month = systime->tm_mon+1;		//0~11 표현하여 더함
 	day = systime->tm_mday;
 	hour = systime->tm_hour;
 	minute = systime->tm_min;
