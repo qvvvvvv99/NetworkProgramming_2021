@@ -11,10 +11,6 @@ int main(int argc, char* argv[])
 	SOCKADDR_IN servAddr, clntAddr;
 
 	char message[30] = "";
-	int strLen = 0;
-	int idx = 0, readLen = 0;
-	char localHostName[256];
-	IN_ADDR in_addr;
 
 	if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
 		ErrorHandling("WSAStartup() error!");
